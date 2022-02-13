@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <title>Tick Tack Toe</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Tick-Tack-Toe</h1>
+        <p id="turnAnnouncement">Player X's turn</p>
+
+        <!-- <div>
+            <label for="adversarySelection">Select adversary:</label>
+            <select name="adversarySelection" id="adversarySelection">
+                <option value="player">Player (human)</option>
+                <option value="computer">Computer (random)</option>
+                <option value="computer">Computer (AI)</option>
+            </select>
+        </div> -->
+        <!-- <button>Start</button> -->
+    </nav>
+    <!-- <div>
+        <h2>Result:</h2>
+        <h2>tie</h2>
+    </div> -->
+
+    <div id="gameContainer" class="game-container">
+        <div id="A1" class="board-grid"></div>
+        <div id="A2" class="board-grid border-l-r"></div>
+        <div id="A3" class="board-grid"></div>
+        <div id="B1" class="board-grid border-t-b"></div>
+        <div id="B2" class="board-grid border-t-b border-l-r"></div>
+        <div id="B3" class="board-grid border-t-b"></div>
+        <div id="C1" class="board-grid"></div>
+        <div id="C2" class="board-grid border-l-r"></div>
+        <div id="C3" class="board-grid"></div>
+
+    </div>
+
+    <div class="game-opts">
+        <div class="reset-btn btn" id="resetBtn">
+            <h3>Reset</h3>
+        </div>
+        <div class="container-players">
+            <div class="btn">
+                <h2>Player X</h2>
+                <h3>Human</h3>
+            </div>
+            <div class="btn">
+                <h2>Player O</h2>
+                <h3>Human</h3>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>2022</p>
+        <p>by</p>
+        <a href="https://github.com/bgtti/">
+            <ion-icon name="logo-github"></ion-icon>
+        </a>
+    </footer>
+
+    <div class="game-over-modal hide" id="gameOverModal">
+        <div class="border-2">
+            <div class="border-1">
+                <div class="container-close-icon" id="closeIcon">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+                <h2 id="winnerAnnouncement">Player X wins!</h2>
+                <div class="btn play-again-btn" id="playAgainButton">
+                    <h3>Play again</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
