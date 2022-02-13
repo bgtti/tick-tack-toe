@@ -1,5 +1,7 @@
 'use strict'
 
+// **********************Game Board****************************
+
 let GameBoard = (function () {
 	const gameboardGrids = {
 		a1: document.querySelector('#A1'),
@@ -173,6 +175,7 @@ let GameBoard = (function () {
 	}
 })()
 
+// **********************Playing****************************
 let GamePlay = (function () {
 	function gameMoves(targetGrid, gridCode) {
 		if (GameBoard.theGame.gameOver === false) {
@@ -220,3 +223,110 @@ let GamePlay = (function () {
 		)
 	}
 })()
+
+// **********************Players****************************
+
+//Factory function to create players
+
+let players = (function () {
+	//the players
+	const playerFactory = (playerName, playerType) => {
+		return {
+			playerName: playerName,
+			playerType: playerType,
+		}
+	}
+	let playerX = playerFactory('Player X', 'Human')
+	let playerO = playerFactory('Player O', 'Human')
+
+	//opening and closing player choice modal
+	const playerChoiceModal = document.querySelector('#playerChoice')
+	const openPlayerChoice = document.querySelector('#playerChoiceBtns')
+	const closePlayerChoiceModal = document.querySelector(
+		'#closePlayerChoiceModal'
+	)
+
+	openPlayerChoice.addEventListener('click', () => {
+		playerChoiceModal.classList.remove('hide')
+	})
+
+	closePlayerChoiceModal.addEventListener(
+		'click',
+		() => {
+			playerChoiceModal.classList.add('hide')
+		},
+		false
+	)
+
+	//saving player preferences: modal selectors
+	const playerXTypeInput = document.querySelector('#typeOfPlayerX')
+	const playerOTypeInput = document.querySelector('#typeOfPlayerO')
+	const playerXNameInput = document.querySelector('#playerXName')
+	const playerONameInput = document.querySelector('#playerOName')
+	const savePlayerPreferencesBtn = document.querySelector(
+		'#savePlayerPreferencesBtn'
+	)
+
+	//only allow name input if player is human and set player type
+	const allowNameWhenHuman = function (type, fieldset) {
+		let playerNameSetting =
+			fieldset === 'X' ? playerXNameInput.value : playerONameInput.value
+		if (type === 'Computer') {
+			document.querySelector('#fielsetName' + fieldset).classList.add('hide')
+			playerNameSetting = 'Player ' + fieldset //makes sure name doesnt change when type is computer
+		} else if (type === 'Human') {
+			document.querySelector('#fielsetName' + fieldset).classList.remove('hide')
+		}
+	}
+	playerXTypeInput.addEventListener(
+		'change',
+		() => {
+			allowNameWhenHuman(playerXTypeInput.value, 'X')
+		},
+		false
+	)
+	playerOTypeInput.addEventListener(
+		'change',
+		() => {
+			allowNameWhenHuman(playerOTypeInput.value, 'O')
+		},
+		false
+	)
+
+	//Displaying Player Names on the board buttons:selectors & Updating the player's names
+	let updateNameOnBoard = function () {
+		const playerXNameDisplaySelector = document.querySelector(
+			'#playerXNameDiyplayBtn'
+		)
+		const playerONameDisplaySelector = document.querySelector(
+			'#playerONameDiyplayBtn'
+		)
+		playerXNameDisplaySelector.innerText = playerX.playerName
+		playerONameDisplaySelector.innerText = playerO.playerName
+	}
+
+	savePlayerPreferencesBtn.addEventListener(
+		'click',
+		() => {
+			if (playerXNameInput.value) {
+				playerX.playerName = playerXNameInput.value
+			}
+			if (playerONameInput.value) {
+				playerO.playerName = playerONameInput.value
+			}
+			playerO.playerName = playerONameInput.valueplayerX.playerType =
+				playerXTypeInput.value
+			playerO.playerType = playerOTypeInput.value
+			updateNameOnBoard()
+			playerChoiceModal.classList.add('hide')
+		},
+		false
+	)
+
+	return {
+		playerX,
+		playerO,
+	}
+})()
+
+//Automated computer play
