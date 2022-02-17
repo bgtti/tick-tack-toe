@@ -85,7 +85,7 @@ h1 {
 
 .win-line-vertical {
 	transform: rotate(90deg);
-	left: -12%;
+	left: -5%;
 }
 .win-line-diagonal-A1 {
 	transform: rotate(45deg);
@@ -181,6 +181,7 @@ footer ion-icon {
 	width: 170px;
 	text-align: right;
 	margin-bottom: 20px;
+	cursor: pointer;
 }
 .container-close-icon ion-icon {
 	color: var(--cLightLilac);
@@ -190,11 +191,182 @@ footer ion-icon {
 	color: var(--cSuperLightLilac);
 	margin-bottom: 20px;
 }
-.play-again-btn {
+.modal-btn {
 	text-align: center;
 	background-color: var(--cLightLilac);
 }
 
+/* Player Selection Modal */
+.player-choice-modal {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--cModalBackground);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.player-preferences {
+	padding: 10px 25px;
+	border: 5px solid var(--cLightLilac);
+}
+.close-player-modal {
+	color: var(--cLightLilac);
+	font-size: 30px;
+	text-align: right;
+}
+.close-player-modal ion-icon {
+	color: var(--cLightLilac);
+	cursor: pointer;
+}
+.player-preferences h2,
+label {
+	color: var(--cSuperLightLilac);
+	margin-bottom: 10px;
+}
+.player-preferences label {
+	margin-right: 10px;
+}
+.player-preferences fieldset {
+	border: none;
+	margin-bottom: 10px;
+}
+.player-preferences select {
+	margin-left: 14px;
+	cursor: pointer;
+}
+.player-preferences select,
+input {
+	width: 115px;
+}
+.player-preferences .btn {
+	margin: auto;
+}
+
+/* Hiding things */
 .hide {
 	display: none;
+}
+
+/* X and O decoration */
+.decoration-letter {
+	position: absolute;
+	visibility: hidden;
+}
+
+@media only screen and (min-width: 800px) {
+	.decoration-letter {
+		visibility: visible;
+		font-family: var(--fFontSpecial);
+		font-size: 60px;
+		color: var(--cSuperLightLilac);
+		transition: all 0.5s ease;
+	}
+	.darkerDeco {
+		color: var(--cDarkLilac);
+		transition: all 0.5s ease;
+	}
+	.decoration-X-1 {
+		font-size: 30px;
+		right: 100px;
+		top: 10px;
+		transform: rotate(-20deg);
+	}
+	.decoration-O-1 {
+		right: 40px;
+		top: 55px;
+	}
+	.decoration-X-2 {
+		right: 150px;
+		top: 200px;
+		transform: rotate(-35deg);
+	}
+	.decoration-O-2 {
+		font-size: 90px;
+		right: 70px;
+		top: 300px;
+		transform: rotate(-20deg);
+	}
+	.decoration-X-3 {
+		font-size: 70px;
+		right: 200px;
+		top: 500px;
+		transform: rotate(20deg);
+	}
+	.decoration-O-3 {
+		font-size: 70px;
+		right: 60px;
+		top: 500px;
+		transform: rotate(15deg);
+	}
+	.decoration-X-4 {
+		font-size: 70px;
+		right: 120px;
+		top: 430px;
+	}
+	.decoration-O-4 {
+		font-size: 160px;
+		right: 130px;
+		top: 570px;
+	}
+	.decoration-X-5 {
+		font-size: 50px;
+		left: 100px;
+		top: 50px;
+	}
+	.decoration-O-5 {
+		font-size: 40px;
+		left: 50px;
+		top: 10px;
+	}
+	.decoration-X-6 {
+		left: 150px;
+		top: 100px;
+		transform: rotate(15deg);
+	}
+	.decoration-O-6 {
+		left: 70px;
+		top: 130px;
+	}
+	.decoration-X-7 {
+		font-size: 90px;
+		left: 150px;
+		top: 260px;
+		transform: rotate(-25deg);
+	}
+	.decoration-O-7 {
+		font-size: 90px;
+		left: 180px;
+		top: 350px;
+		transform: rotate(-25deg);
+	}
+	.decoration-O-8 {
+		font-size: 120px;
+		left: 70px;
+		top: 350px;
+		transform: rotate(-25deg);
+	}
+	.decoration-X-8 {
+		font-size: 130px;
+		left: 50px;
+		top: 470px;
+		transform: rotate(-5deg);
+	}
+	.decoration-X-9 {
+		font-size: 150px;
+		left: 140px;
+		top: 580px;
+		transform: rotate(-5deg);
+	}
+	.decoration-O-9 {
+		right: 20px;
+		top: 150px;
+		transform: rotate(90deg);
+	}
+	.brighterDeco {
+		color: var(--cLilac);
+		transition: all 0.5s ease;
+	}
 }

@@ -21,21 +21,7 @@
     <nav>
         <h1>Tick-Tack-Toe</h1>
         <p id="turnAnnouncement">Player X's turn</p>
-
-        <!-- <div>
-            <label for="adversarySelection">Select adversary:</label>
-            <select name="adversarySelection" id="adversarySelection">
-                <option value="player">Player (human)</option>
-                <option value="computer">Computer (random)</option>
-                <option value="computer">Computer (AI)</option>
-            </select>
-        </div> -->
-        <!-- <button>Start</button> -->
     </nav>
-    <!-- <div>
-        <h2>Result:</h2>
-        <h2>tie</h2>
-    </div> -->
 
     <div id="gameContainer" class="game-container">
         <div id="A1" class="board-grid"></div>
@@ -54,14 +40,14 @@
         <div class="reset-btn btn" id="resetBtn">
             <h3>Reset</h3>
         </div>
-        <div class="container-players">
+        <div class="container-players" id="playerChoiceBtns">
             <div class="btn">
                 <h2>Player X</h2>
-                <h3>Human</h3>
+                <h3 id="playerXNameDiyplayBtn">Human</h3>
             </div>
             <div class="btn">
                 <h2>Player O</h2>
-                <h3>Human</h3>
+                <h3 id="playerONameDiyplayBtn">Human</h3>
             </div>
         </div>
     </div>
@@ -74,6 +60,8 @@
         </a>
     </footer>
 
+    <!-- GAME OVER MODAL -->
+
     <div class="game-over-modal hide" id="gameOverModal">
         <div class="border-2">
             <div class="border-1">
@@ -81,13 +69,83 @@
                     <ion-icon name="close-outline"></ion-icon>
                 </div>
                 <h2 id="winnerAnnouncement">Player X wins!</h2>
-                <div class="btn play-again-btn" id="playAgainButton">
+                <div class="btn modal-btn" id="playAgainButton">
                     <h3>Play again</h3>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <!-- PLAYER CHOICE MODAL -->
+    <div class="player-choice-modal hide" id="playerChoice">
+        <div class="player-preferences">
+            <div class="close-player-modal">
+                <ion-icon name="close-outline" id="closePlayerChoiceModal"></ion-icon>
+            </div>
+            <div>
+                <h2>Player X</h2>
+                <form action="">
+                    <fieldset id="playerXNameField">
+                        <label for="typeOfPlayerX">Type of player: </label>
+                        <select name="typeOfPlayerX" id="typeOfPlayerX">
+                            <option value="Human" selected>Human</option>
+                            <option value="Computer">Computer</option>
+                        </select>
+                    </fieldset>
+                    <fieldset id="fielsetNameX">
+                        <label for="playerXName">Player X's name:</label>
+                        <input type="text" name="playerXName" id="playerXName" placeholder="Player X" maxlength="10">
+                    </fieldset>
+                </form>
+            </div>
+            <br>
+            <div>
+                <h2>Player O</h2>
+                <form action="">
+                    <fieldset fieldset id="playerONameField">
+                        <label for="typeOfPlayerO">Type of player:</label>
+                        <select name="typeOfPlayerO" id="typeOfPlayerO">
+                            <option value="Human" selected>Human</option>
+                            <option value="Computer">Computer</option>
+                        </select>
+                    </fieldset>
+                    <fieldset id="fielsetNameO">
+                        <label for="playerOName">Player O's name:</label>
+                        <input type="text" name="playerOName" id="playerOName" placeholder="Player O" maxlength="10">
+                    </fieldset>
+                </form>
+                <br>
+                <div class="btn modal-btn" id="savePlayerPreferencesBtn">
+                    <h3>Save</h3>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- X and O Decoration -->
+    <p class="decoration-letter decoration-X-1 decorationLetter decorationLetterX">X</p>
+    <p class="decoration-letter decoration-X-2 decorationLetter decorationLetterX">X</p>
+    <p class="decoration-letter decoration-X-3 decorationLetter decorationLetterX">X</p>
+    <p class="decoration-letter decoration-X-4 decorationLetter decorationLetterX">X</p>
+    <p class="decoration-letter decoration-O-1 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-O-2 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-O-3 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-O-4 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-X-5 decorationLetter decorationLetterX">X</p>
+    <p class="decoration-letter decoration-X-6 decorationLetter decorationLetterX">X</p>
+    <p class="decoration-letter decoration-X-7 decorationLetter decorationLetterX">X</p>
+    <p class="decoration-letter decoration-X-8 decorationLetter decorationLetterX">X</p>
+    <p class="decoration-letter decoration-O-5 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-O-6 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-O-7 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-O-8 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-O-9 decorationLetter decorationLetterO">O</p>
+    <p class="decoration-letter decoration-X-9 decorationLetter decorationLetterX">X</p>
+
+
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
