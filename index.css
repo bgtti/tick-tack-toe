@@ -6,7 +6,6 @@
 	--cLilac: #8d83c3;
 	--cLightLilac: #d5c6da60;
 	--cSuperLightLilac: #d5c6da;
-
 	--cModalBackground: #291b28fb;
 }
 
@@ -43,7 +42,6 @@ h1 {
 .game-container {
 	height: 300px;
 	width: 300px;
-
 	display: grid;
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-columns: repeat(3, 1fr);
@@ -52,7 +50,6 @@ h1 {
 	position: relative;
 	width: 100px;
 	height: 100px;
-	/* border: 1px solid black; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
